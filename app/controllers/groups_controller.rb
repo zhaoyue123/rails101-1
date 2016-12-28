@@ -40,7 +40,7 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-    
+
 
     @group.destroy
 
@@ -56,6 +56,7 @@ class GroupsController < ApplicationController
     if current_user != @group.user
       redirect_to root_path, alert: "You have no permission"
     end
+  end
 
   def group_params
     params.require(:group).permit(:title, :description)
